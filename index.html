@@ -125,7 +125,47 @@
             font-weight: bold;
             font-size: 1.1em;
         }
+
+        .section-title {
+            color: #00ff88;
+            text-align: center;
+            margin: 50px 0 30px 0;
+            font-size: 2.2em;
+        }
         
+        .revenue-summary {
+            background: linear-gradient(145deg, #2a2a5a, #1a1a3a);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 2px solid #ff6b6b;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .revenue-item {
+            background: linear-gradient(45deg, #0f3460, #533483);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .revenue-item h3 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        
+        .revenue-item .amount {
+            color: #00ff88;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
         .property-map {
             background: linear-gradient(145deg, #2a2a5a, #1a1a3a);
             border-radius: 20px;
@@ -135,16 +175,9 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
         
-        .property-map h2 {
-            color: #00ff88;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2em;
-        }
-        
         .property-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin: 20px 0;
         }
@@ -163,58 +196,17 @@
         }
         
         .building {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             padding: 10px;
-            margin: 5px 0;
+            margin: 8px 0;
             border-radius: 8px;
             text-align: center;
             font-weight: bold;
         }
         
-        .revenue-summary {
-            background: linear-gradient(45deg, #0f3460, #533483);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 40px 0;
-            border: 2px solid #ff6b6b;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        }
-        
-        .revenue-summary h2 {
-            color: #ff6b6b;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.2em;
-        }
-        
-        .revenue-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .revenue-item {
-            background: linear-gradient(145deg, #2a2a5a, #1a1a3a);
-            padding: 20px;
-            border-radius: 15px;
-            border: 2px solid #00ff88;
-            text-align: center;
-        }
-        
-        .revenue-item h3 {
-            color: #00ff88;
-            margin-bottom: 10px;
-        }
-        
-        .revenue-item .amount {
-            color: #ff6b6b;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-        
         .total-box {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            background: linear-gradient(45deg, #00ff88, #00d4ff);
             padding: 30px;
             border-radius: 20px;
             text-align: center;
@@ -223,31 +215,30 @@
         }
         
         .total-box h2 {
-            color: white;
+            color: #1a1a2e;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
         
         .total-box p {
-            color: white;
+            color: #1a1a2e;
             font-size: 1.2em;
         }
         
         .milestones {
             display: flex;
-            justify-content: space-around;
-            margin: 40px 0;
+            justify-content: center;
             flex-wrap: wrap;
+            gap: 20px;
         }
         
         .milestone {
             background: linear-gradient(145deg, #2a2a5a, #1a1a3a);
             border-radius: 15px;
             padding: 20px;
-            margin: 10px;
             text-align: center;
             border: 2px solid #00d4ff;
-            min-width: 200px;
+            width: 220px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
         
@@ -266,23 +257,12 @@
             .timeline {
                 flex-direction: column;
                 align-items: center;
+                gap: 20px;
             }
-            
-            .timeline::before {
-                display: none;
-            }
-            
-            .timeline-item {
-                margin: 10px 0;
-            }
-            
-            .property-layout {
-                grid-template-columns: 1fr;
-            }
-            
-            .revenue-grid {
-                grid-template-columns: 1fr;
-            }
+            .timeline::before { display: none; }
+            .phases { grid-template-columns: 1fr; }
+            .revenue-grid { grid-template-columns: 1fr; }
+            .property-layout { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -290,7 +270,7 @@
     <div class="container">
         <div class="header">
             <h1>🚀 MASTER PLAN 2025-2035</h1>
-            <p>From $0 to $15M+ Net Worth | Multi-Revenue Empire</p>
+            <p>From Apprentice to a $15M+ Multi-Revenue Empire</p>
             <p><strong>Location:</strong> Pasco County, Florida</p>
         </div>
         
@@ -298,182 +278,96 @@
             <div class="timeline-item">
                 <h3>2025-2029</h3>
                 <p>Foundation</p>
-                <p>Apprenticeship + Web Dev</p>
             </div>
             <div class="timeline-item">
                 <h3>2029-2032</h3>
-                <p>Property Development</p>
-                <p>30-Acre Empire</p>
+                <p>Development</p>
             </div>
             <div class="timeline-item">
                 <h3>2032-2035</h3>
                 <p>Full Operations</p>
-                <p>$3.38M Annual Profit</p>
             </div>
         </div>
         
         <div class="phases">
             <div class="phase">
                 <h2>📚 PHASE 1: FOUNDATION (2025-2029)</h2>
-                <div class="income-stream">
-                    <h4>Electrical Apprenticeship</h4>
-                    <div class="income-amount">$35K/year</div>
-                </div>
-                <div class="income-stream">
-                    <h4>AI Real Estate Platform</h4>
-                    <div class="income-amount">$50K-$200K/year</div>
-                </div>
-                <div class="income-stream">
-                    <h4>Web Development</h4>
-                    <div class="income-amount">$100K+/year</div>
-                </div>
-                <p><strong>Total Saved:</strong> $540,000 for property acquisition</p>
+                <div class="income-stream"><h4>Electrical Apprenticeship</h4><div class="income-amount">$35K/yr</div></div>
+                <div class="income-stream"><h4>Web Dev & AI Projects</h4><div class="income-amount">$100K+/yr</div></div>
+                <p style="margin-top:15px; text-align:center; font-weight:bold; color: #00ff88;"><strong>Total Saved for Property:</strong> ~$540,000</p>
             </div>
             
             <div class="phase">
                 <h2>🏗️ PHASE 2: DEVELOPMENT (2029-2032)</h2>
-                <div class="income-stream">
-                    <h4>Property Purchase</h4>
-                    <div class="income-amount">$400K</div>
-                </div>
-                <div class="income-stream">
-                    <h4>Development Investment</h4>
-                    <div class="income-amount">$1.2M</div>
-                </div>
-                <div class="income-stream">
-                    <h4>Electrical Business Launch</h4>
-                    <div class="income-amount">$270K/year</div>
-                </div>
-                <p><strong>Focus:</strong> Building infrastructure and revenue assets</p>
+                <div class="income-stream"><h4>Property Purchase & Build</h4><div class="income-amount">$2.8M</div></div>
+                <div class="income-stream"><h4>Electrical Business Launch</h4><div class="income-amount">$270K+/yr</div></div>
+                <p style="margin-top:15px; text-align:center; font-weight:bold; color: #00ff88;">Focus: Build all core revenue-generating assets.</p>
             </div>
             
             <div class="phase">
                 <h2>💰 PHASE 3: OPERATIONS (2032-2035)</h2>
-                <div class="income-stream">
-                    <h4>8 Revenue Streams Active</h4>
-                    <div class="income-amount">$4.17M/year</div>
-                </div>
-                <div class="income-stream">
-                    <h4>Net Profit</h4>
-                    <div class="income-amount">$3.38M/year</div>
-                </div>
-                <div class="income-stream">
-                    <h4>Asset Value</h4>
-                    <div class="income-amount">$10M+</div>
-                </div>
-                <p><strong>Result:</strong> $15M+ total net worth</p>
+                <div class="income-stream"><h4>8 Revenue Streams Active</h4><div class="income-amount">$4.2M+/yr</div></div>
+                <div class="income-stream"><h4>Net Profit Annually</h4><div class="income-amount">$3.38M+/yr</div></div>
+                <p style="margin-top:15px; text-align:center; font-weight:bold; color: #00ff88;">Goal: Achieve $15M+ Net Worth</p>
             </div>
         </div>
+
+        <h2 class="section-title">💸 Revenue Summary (Full Operation)</h2>
+        <div class="revenue-summary">
+            <div class="revenue-grid">
+                <div class="revenue-item"><h3>Robotics Sales/Service</h3><p class="amount">$800K</p></div>
+                <div class="revenue-item"><h3>Electrical Contracting</h3><p class="amount">$525K</p></div>
+                <div class="revenue-item"><h3>Real Estate Brokerage</h3><p class="amount">$500K</p></div>
+                <div class="revenue-item"><h3>Web Dev / AI Products</h3><p class="amount">$450K</p></div>
+                <div class="revenue-item"><h3>Wedding & Event Venue</h3><p class="amount">$750K</p></div>
+                <div class="revenue-item"><h3>Rental Cabins</h3><p class="amount">$150K</p></div>
+                <div class="revenue-item"><h3>Commercial Tenant Rent</h3><p class="amount">$84K</p></div>
+                <div class="revenue-item"><h3>Botanical Garden/Cafe</h3><p class="amount">$120K</p></div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🎓 Key Milestones & Education</h2>
+        <div class="milestones">
+            <div class="milestone"><h3>Apprenticeship</h3><p class="year">2025-2029</p><p>4 Years / 8000 hours</p></div>
+            <div class="milestone"><h3>Broker's License</h3><p class="year">2026</p><p>Real Estate</p></div>
+            <div class="milestone"><h3>Journeyman License</h3><p class="year">2029</p><p>Electrical</p></div>
+            <div class="milestone"><h3>Contractor License</h3><p class="year">2029</p><p>Electrical Business</p></div>
+            <div class="milestone"><h3>Master Electrician</h3><p class="year">2031</p><p>Highest Certification</p></div>
+        </div>
         
+        <h2 class="section-title">🏞️ 30-Acre Property Layout</h2>
         <div class="property-map">
-            <h2>🏞️ 30-ACRE PROPERTY LAYOUT</h2>
             <div class="property-layout">
                 <div class="property-section">
-                    <h3>Commercial Strip (5 Units)</h3>
-                    <div class="building">Unit 1: Electrical Business HQ</div>
+                    <h3>Commercial Strip</h3>
+                    <div class="building">Unit 1: Electrical & Robotics HQ</div>
                     <div class="building">Unit 2: Real Estate Brokerage</div>
-                    <div class="building">Unit 3: Robotics Sales/Service</div>
+                    <div class="building">Unit 3: Robotics Service Center</div>
                     <div class="building">Unit 4: Coffee Shop (Tenant)</div>
                     <div class="building">Unit 5: Restaurant/Bar (Tenant)</div>
-                    <p style="margin-top: 15px; color: #00ff88;"><strong>Rental Income:</strong> $84K/year</p>
                 </div>
                 
                 <div class="property-section">
                     <h3>Event Venues</h3>
                     <div class="building">Wedding Venue</div>
-                    <div class="building">Event Pavilion</div>
-                    <div class="building">Botanical Garden</div>
+                    <div class="building">Event Pavilion & Food Trucks</div>
+                    <div class="building">Botanical Garden & Cafe</div>
                     <div class="building">Walking Trails & Park</div>
-                    <p style="margin-top: 15px; color: #00ff88;"><strong>Revenue:</strong> $1.1M/year</p>
                 </div>
                 
                 <div class="property-section">
-                    <h3>Accommodation</h3>
+                    <h3>Accommodation & Infrastructure</h3>
                     <div class="building">Luxury Cabin #1</div>
                     <div class="building">Luxury Cabin #2</div>
                     <div class="building">Luxury Cabin #3</div>
-                    <p style="margin-top: 15px; color: #00ff88;"><strong>Revenue:</strong> $191K/year</p>
-                </div>
-                
-                <div class="property-section">
-                    <h3>Infrastructure</h3>
-                    <div class="building">Parking Areas</div>
-                    <div class="building">Utilities Hub</div>
-                    <div class="building">Maintenance Facility</div>
-                    <div class="building">Security Systems</div>
-                    <p style="margin-top: 15px; color: #00ff88;"><strong>Value:</strong> Operational efficiency</p>
+                    <div class="building">Main Parking Areas</div>
                 </div>
             </div>
         </div>
         
-        <div class="revenue-summary">
-            <h2>💸 2035 REVENUE BREAKDOWN</h2>
-            <div class="revenue-grid">
-                <div class="revenue-item">
-                    <h3>⚡ Electrical Contracting</h3>
-                    <div class="amount">$525K</div>
-                    <p>No rent expenses = +$36K profit</p>
-                </div>
-                <div class="revenue-item">
-                    <h3>🏠 Real Estate Brokerage</h3>
-                    <div class="amount">$500K</div>
-                    <p>No rent expenses = +$60K profit</p>
-                </div>
-                <div class="revenue-item">
-                    <h3>🤖 Robotics Sales/Service</h3>
-                    <div class="amount">$800K</div>
-                    <p>No rent expenses = +$36K profit</p>
-                </div>
-                <div class="revenue-item">
-                    <h3>💒 Wedding Venue</h3>
-                    <div class="amount">$350K</div>
-                    <p>50 weddings/year × $7K profit</p>
-                </div>
-                <div class="revenue-item">
-                    <h3>🎉 Event Venue</h3>
-                    <div class="amount">$400K</div>
-                    <p>Corporate events & tours</p>
-                </div>
-                <div class="revenue-item">
-                    <h3>🏕️ Rental Cabins</h3>
-                    <div class="amount">$150K</div>
-                    <p>3 cabins × $250/night</p>
-                </div>
-                <div class="revenue-item">
-                    <h3>🏢 Commercial Rental</h3>
-                    <div class="amount">$75K</div>
-                    <p>2 tenant units</p>
-                </div>
-                <div class="revenue-item">
-                    <h3>💻 Web Development/AI</h3>
-                    <div class="amount">$450K</div>
-                    <p>SaaS + custom development</p>
-                </div>
-            </div>
-            
-            <div class="total-box">
-                <h2>$3.38M TOTAL ANNUAL PROFIT</h2>
-                <p>Zero rent expenses across all businesses</p>
-                <p>100% property ownership advantage</p>
-            </div>
-        </div>
-        
-        <div class="milestones">
-            <div class="milestone">
-                <h3>Apprenticeship Complete</h3>
-                <div class="year">2029</div>
-                <p>Journeyman License</p>
-            </div>
-            <div class="milestone">
-                <h3>Property Developed</h3>
-                <div class="year">2032</div>
-                <p>All venues operational</p>
-            </div>
-            <div class="milestone">
-                <h3>Empire Complete</h3>
-                <div class="year">2035</div>
-                <p>$15M+ Net Worth</p>
-            </div>
+        <div class="total-box">
+            <h2>Total Projected Annual Profit: $3.38M+</h2>
+            <p>+ $132,000/year in saved rent for your own businesses!</p>
         </div>
     </div>
 </body>
