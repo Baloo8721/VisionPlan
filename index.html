@@ -297,11 +297,73 @@
             align-items: center;
         }
 
-        .completed-cert {
+        .completed-cert, .target-date {
             color: #00ff88;
             font-weight: bold;
             font-size: 0.9em;
             white-space: nowrap;
+        }
+
+        .target-date {
+            color: #f0f8ff;
+            opacity: 0.8;
+        }
+
+        .cert-item {
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 8px;
+            border-radius: 5px;
+            border-left: 3px solid #00ff88;
+            padding: 12px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .cert-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .cert-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .cert-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            margin-top: 0;
+            padding-left: 10px;
+            border-left: 2px solid rgba(0, 255, 136, 0.3);
+            font-size: 0.9em;
+            opacity: 0;
+            transition: max-height 0.4s ease-out, margin-top 0.4s ease-out, opacity 0.3s ease-out;
+        }
+
+        .cert-details p {
+            margin: 8px 0;
+            color: #ddd;
+        }
+
+        .cert-item.active .cert-details {
+            max-height: 500px;
+            margin-top: 12px;
+            opacity: 1;
+        }
+
+        .toggle-icon::before {
+            content: '+';
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-left: 10px;
+            transition: transform 0.3s;
+            display: inline-block;
+        }
+
+        .cert-item.active .toggle-icon::before {
+            transform: rotate(45deg);
         }
         
         @media (max-width: 768px) {
@@ -327,38 +389,42 @@
         
         <div class="timeline">
             <div class="timeline-item">
-                <h3>2025-2029</h3>
-                <p>Foundation</p>
+                <h3>2025-2027</h3>
+                <p>Foundation & Early Revenue</p>
             </div>
             <div class="timeline-item">
-                <h3>2029-2032</h3>
-                <p>Development</p>
+                <h3>2028-2029</h3>
+                <p>Expansion & Scaling</p>
             </div>
             <div class="timeline-item">
-                <h3>2032-2035</h3>
+                <h3>2030-2032</h3>
                 <p>Full Operations</p>
             </div>
         </div>
         
         <div class="phases">
             <div class="phase">
-                <h2>📚 PHASE 1: FOUNDATION (2025-2029)</h2>
-                <div class="income-stream"><h4>Electrical Apprenticeship</h4><div class="income-amount">$35K/yr</div></div>
-                <div class="income-stream"><h4>Web Dev & AI Projects</h4><div class="income-amount">$100K+/yr</div></div>
-                <p style="margin-top:15px; text-align:center; font-weight:bold; color: #00ff88;"><strong>Total Saved for Property:</strong> ~$540,000</p>
+                <h2>📚 PHASE 1: FOUNDATION (2025-2027)</h2>
+                <div class="income-stream"><h4>EV Installations</h4><div class="income-amount">$50K–$100K/yr</div></div>
+                <div class="income-stream"><h4>Thermal Diagnostics</h4><div class="income-amount">$20K–$50K/yr</div></div>
+                <div class="income-stream"><h4>Real Estate Commissions</h4><div class="income-amount">$10K–$50K/yr</div></div>
+                <div class="income-stream"><h4>Electrical Apprenticeship</h4><div class="income-amount">$30K–$50K/yr</div></div>
+                <p style="margin-top:15px; text-align:center; font-weight:bold; color: #00ff88;"><strong>Total Saved for Property:</strong> ~$600,000</p>
             </div>
             
             <div class="phase">
-                <h2>🏗️ PHASE 2: DEVELOPMENT (2029-2032)</h2>
-                <div class="income-stream"><h4>Property Purchase & Build</h4><div class="income-amount">$2.8M</div></div>
-                <div class="income-stream"><h4>Electrical Business Launch</h4><div class="income-amount">$270K+/yr</div></div>
-                <p style="margin-top:15px; text-align:center; font-weight:bold; color: #00ff88;">Focus: Build all core revenue-generating assets.</p>
+                <h2>🏗️ PHASE 2: EXPANSION (2028-2029)</h2>
+                <div class="income-stream"><h4>Solar Installations</h4><div class="income-amount">$50K–$100K/yr</div></div>
+                <div class="income-stream"><h4>PLC & HMI/SCADA Services</h4><div class="income-amount">$90K–$240K/yr</div></div>
+                <div class="income-stream"><h4>Real Estate Brokerage</h4><div class="income-amount">$60K–$150K/yr</div></div>
+                <p style="margin-top:15px; text-align:center; font-weight:bold; color: #00ff88;">Focus: Scale services and acquire journeyman license.</p>
             </div>
             
             <div class="phase">
-                <h2>💰 PHASE 3: OPERATIONS (2032-2035)</h2>
-                <div class="income-stream"><h4>8 Revenue Streams Active</h4><div class="income-amount">$4.2M+/yr</div></div>
-                <div class="income-stream"><h4>Net Profit Annually</h4><div class="income-amount">$3.38M+/yr</div></div>
+                <h2>💰 PHASE 3: FULL OPERATIONS (2030-2032)</h2>
+                <div class="income-stream"><h4>Robotics Services</h4><div class="income-amount">$140K–$300K/yr</div></div>
+                <div class="income-stream"><h4>Electrical Contracting</h4><div class="income-amount">$110K–$180K/yr</div></div>
+                <div class="income-stream"><h4>Full Business Operations</h4><div class="income-amount">$500K–$1M+/yr</div></div>
                 <p style="margin-top:15px; text-align:center; font-weight:bold; color: #00ff88;">Goal: Achieve $15M+ Net Worth</p>
             </div>
         </div>
@@ -379,78 +445,8 @@
 
         <h2 class="section-title">📋 Actionable Roadmap: Licenses & Certifications</h2>
         <div class="certifications-roadmap">
-            <div class="cert-grid">
-                <div class="cert-category">
-                    <h3>⚡ Electrical Foundation</h3>
-                    <ul>
-                        <li>NCCER Levels 1-4 <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Florida Journeyman License <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Florida Master Electrician <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Certified Electrical Contractor <span class="completed-cert">(✓ Acquired)</span></li>
-                    </ul>
-                </div>
-                <div class="cert-category">
-                    <h3>🚗 EV Installations</h3>
-                    <ul>
-                        <li>EVITP Certification <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Tesla Wall Connector Certified <span class="completed-cert">(✓ Acquired)</span></li>
-                    </ul>
-                </div>
-                <div class="cert-category">
-                    <h3>⚙️ PLC Systems</h3>
-                    <ul>
-                        <li>Siemens SITRAIN (TIA Portal) <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Rockwell Studio 5000 <span class="completed-cert">(✓ Acquired)</span></li>
-                    </ul>
-                </div>
-                <div class="cert-category">
-                    <h3>☀️ Solar (PV Systems)</h3>
-                    <ul>
-                        <li>NABCEP PV Installation Pro <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>SEI Grid-Direct & Advanced PV <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>SEI Battery-Based PV Systems <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Florida DBPR Solar Contractor <span class="completed-cert">(✓ Acquired)</span></li>
-                    </ul>
-                </div>
-                <div class="cert-category">
-                    <h3>🌡️ Thermal Imaging</h3>
-                    <ul>
-                        <li>Level 1 Thermographer <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>ITC Level 1 <span class="completed-cert">(✓ Acquired)</span></li>
-                    </ul>
-                </div>
-                <div class="cert-category">
-                    <h3>🤖 Robotics (FANUC/Siemens)</h3>
-                    <ul>
-                        <li>FANUC Certified Robot Tech <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Siemens Robotics Programming <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>FANUC HandlingTool & Vision</li>
-                        <li>Siemens SIMATIC Robot Integrator</li>
-                    </ul>
-                </div>
-                <div class="cert-category">
-                    <h3>🖥️ HMI/SCADA</h3>
-                    <ul>
-                        <li>Ignition SCADA Certification</li>
-                        <li>Siemens WinCC Professional</li>
-                        <li>Rockwell FactoryTalk View</li>
-                    </ul>
-                </div>
-                <div class="cert-category">
-                    <h3>🏠 Real Estate</h3>
-                    <ul>
-                        <li>Florida Realtor License <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Florida Broker License (Planned 2026)</li>
-                    </ul>
-                </div>
-                <div class="cert-category">
-                    <h3>📑 Business Essentials</h3>
-                    <ul>
-                        <li>Pasco County Registration <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>LLC Formation <span class="completed-cert">(✓ Acquired)</span></li>
-                        <li>Business Insurance <span class="completed-cert">(✓ Acquired)</span></li>
-                    </ul>
-                </div>
+            <div class="cert-grid" id="cert-grid-container">
+                <!-- Categories populated by JS -->
             </div>
         </div>
         
@@ -489,5 +485,99 @@
             <p>+ $132,000/year in saved rent for your own businesses!</p>
         </div>
     </div>
+    <script>
+        const certifications = {
+            "⚡ Electrical Foundation": [
+                { name: "OSHA 10 Certification", eta: "2025", details: "Required for NABCEP and job site safety; covers construction and electrical hazards.", cost: "$100" },
+                { name: "NCCER Levels 1-4", eta: "2028", details: "Foundational electrical skills via 4-year apprenticeship; covers safety, wiring, and systems.", cost: "$1,000–$3,000" },
+                { name: "Florida Journeyman License", eta: "2029", details: "Allows independent electrical work under a contractor; requires 4 years experience.", cost: "$500–$1,000" },
+                { name: "Florida Master Electrician", eta: "2031", details: "Allows complex electrical work; requires 7 years experience.", cost: "$500–$1,000" },
+                { name: "Florida DBPR Business and Finance Exam Prep", eta: "2031", details: "Required for contractor license (business portion); covers financial management and Florida laws.", cost: "$500–$1,000" },
+                { name: "Certified Electrical Contractor", eta: "2032", details: "Allows pulling permits for electrical/solar work; requires 4 years journeyman or 1 year master experience.", cost: "$1,500–$3,000" }
+            ],
+            "🚗 EV Installations": [
+                { name: "EVITP Certification", eta: "2025", details: "Industry standard for residential/commercial EV charger installation.", cost: "$1,000–$2,000" },
+                { name: "Tesla Wall Connector Certified", eta: "2025", details: "Certifies installation of Tesla Wall Connectors; offered via Tesla partner program.", cost: "$0–$500" },
+                { name: "ChargePoint Certified Installer", eta: "2025", details: "Certifies installation of ChargePoint EV chargers; expands client base.", cost: "$200–$500" }
+            ],
+            "⚙️ PLC Systems": [
+                { name: "Siemens SITRAIN (TIA Portal)", eta: "2027", details: "Programming/troubleshooting Siemens PLCs; high-demand in industrial automation.", cost: "$2,000–$4,000" },
+                { name: "Rockwell Studio 5000", eta: "2027", details: "Programming Rockwell PLCs; complements Siemens for broad industrial use.", cost: "$2,000–$4,000" }
+            ],
+            "☀️ Solar (PV Systems)": [
+                { name: "SEI Solar Certifications", eta: "2026", details: "Includes Grid-Direct PV, Advanced PV Design, Battery-Based PV; counts toward NABCEP.", cost: "$2,000–$3,000" },
+                { name: "NABCEP PV Installation Pro", eta: "2027", details: "Gold standard for solar PV installation; requires 58 hours training, 12 months experience.", cost: "$500–$1,000" },
+                { name: "Florida DBPR Solar Contractor", eta: "2027", details: "Required for pulling solar permits in Florida; requires 4 years experience.", cost: "$1,000–$2,000" }
+            ],
+            "🌡️ Thermal Imaging": [
+                { name: "ITC Level 1 Thermographer", eta: "2025", details: "Covers thermal imaging for electrical/solar diagnostics; enables independent diagnostic work.", cost: "$1,500–$2,500" }
+            ],
+            "🤖 Robotics (FANUC/Siemens)": [
+                { name: "FANUC Certified Robot Technician", eta: "2030", details: "Core certification for FANUC robots; relevant for Tesla Optimus.", cost: "$2,000–$3,500" },
+                { name: "Siemens Robotics Programming", eta: "2030", details: "Covers Siemens robotic systems; complements PLC skills.", cost: "$2,000–$3,500" },
+                { name: "Universal Robots Certified", eta: "2031", details: "Certifies UR collaborative robots; relevant for humanoid applications.", cost: "$1,000–$2,000" },
+                { name: "ROS Basics", eta: "2031", details: "Foundational for humanoid robot control; online via Udemy/Coursera.", cost: "$500–$1,000" }
+            ],
+            "🖥️ HMI/SCADA": [
+                { name: "Ignition SCADA Certification", eta: "2029", details: "Covers Inductive Automation’s Ignition platform for SCADA systems.", cost: "$1,500–$3,000" },
+                { name: "Siemens WinCC Professional", eta: "2029", details: "Complements Siemens PLCs for HMI/SCADA integration.", cost: "$2,000–$3,500" },
+                { name: "Rockwell FactoryTalk View", eta: "2030", details: "Covers Rockwell HMI/SCADA systems; expands client base.", cost: "$2,000–$3,500" }
+            ],
+            "🏠 Real Estate": [
+                { name: "Florida Realtor License", eta: "Acquired", details: "Allows real estate transactions; useful for networking and side income.", cost: "Acquired" },
+                { name: "Florida Broker License", eta: "2026", details: "Enables real estate brokerage; requires 2 years active experience.", cost: "$500–$1,000" }
+            ],
+            "📑 Business Essentials": [
+                { name: "Pasco County Registration", eta: "Acquired", details: "Required to operate a business in Pasco County; ensure annual renewals.", cost: "Acquired" },
+                { name: "LLC Formation", eta: "Acquired", details: "Protects personal assets; maintain good standing with Florida Division of Corporations.", cost: "Acquired" },
+                { name: "Business Insurance", eta: "Acquired", details: "Covers electrical, solar, robotics work; update for new services.", cost: "$1,000–$5,000/year" }
+            ]
+        };
+
+        const container = document.getElementById('cert-grid-container');
+
+        for (const category in certifications) {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'cert-category';
+
+            const categoryTitle = document.createElement('h3');
+            categoryTitle.innerHTML = category;
+            categoryDiv.appendChild(categoryTitle);
+
+            const list = document.createElement('ul');
+            certifications[category].forEach(cert => {
+                const listItem = document.createElement('li');
+                listItem.className = 'cert-item';
+
+                const header = document.createElement('div');
+                header.className = 'cert-header';
+                header.innerHTML = `
+                    <span>${cert.name}</span>
+                    <span class="${cert.eta === 'Acquired' ? 'completed-cert' : 'target-date'}">
+                        ${cert.eta === 'Acquired' ? '✓ Acquired' : `(ETA: ${cert.eta})`}
+                    </span>
+                    <span class="toggle-icon"></span>
+                `;
+
+                const details = document.createElement('div');
+                details.className = 'cert-details';
+                details.innerHTML = `<p><strong>Details:</strong> ${cert.details}</p><p><strong>Est. Cost:</strong> ${cert.cost}</p><p><strong>Duration:</strong> ${cert.duration || 'Varies'}</p>`;
+
+                listItem.appendChild(header);
+                listItem.appendChild(details);
+                list.appendChild(listItem);
+            });
+
+            categoryDiv.appendChild(list);
+            container.appendChild(categoryDiv);
+        }
+
+        container.addEventListener('click', function(e) {
+            const item = e.target.closest('.cert-item');
+            if (item) {
+                item.classList.toggle('active');
+            }
+        });
+    </script>
 </body>
 </html>
